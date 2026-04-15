@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outage Detection & Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">📡</span>
+            <h1>Distributed Outage Detection</h1>
+        </div>
+        <div class="status-indicator">
+            System Online: <span id="system-status" class="online">●</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Service Status Cards -->
+        <section class="status-container" id="service-status-grid">
+            <!-- Dynamic cards go here -->
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-container">
+            <div class="chart-card">
+                <h3>Live Latency (ms)</h3>
+                <canvas id="latencyChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Live Error Rate (%)</h3>
+                <canvas id="errorChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Logs and Alerts -->
+        <section class="details-container">
+            <div class="alerts-panel">
+                <h3>Recent Alerts</h3>
+                <div id="alerts-feed" class="feed"></div>
+            </div>
+            <div class="logs-panel">
+                <h3>System Logs</h3>
+                <div id="logs-feed" class="feed"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Outage Detection System | Premium Performance Monitoring</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
